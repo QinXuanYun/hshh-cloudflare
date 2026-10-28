@@ -465,12 +465,12 @@
       bannerImg: 'assets/oufen/banner_thumb.jpg',
       discoverTitle: '发现',
       discover: [
-        { id: 'history', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=藕粉+的历史', title: '藕粉的历史', desc: '从宋代流传至今的江南味道' },
-        { id: 'grow', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=莲藕+的生长', title: '莲藕的生长', desc: '淤泥中孕育的洁白宝藏' },
+        { id: 'history', img: 'assets/oufen/mmexport1780359855625.jpg', title: '藕粉的历史', desc: '从宋代流传至今的江南味道' },
+        { id: 'grow', img: 'assets/oufen/mmexport1780359857215.jpg', title: '莲藕的生长', desc: '淤泥中孕育的洁白宝藏' },
         { id: 'craft', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=古法+制作', title: '古法制作技艺', desc: '十余道工序，手工传承的匠心' },
         { id: 'culture', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=江南+藕文化', title: '江南藕文化', desc: '藕粉里的水乡记忆与民俗风情' }
       ],
-      master: { name: '陈师傅', desc: '三十载匠心守护，只为那一碗纯正藕粉...', initial: '陈' },
+      master: { name: '李师傅', desc: '非遗技艺传承人·李宝大，用心守护每一份传统滋味', initial: '李', image: 'assets/qita/Snipaste_2026-06-03_14-06-33.png' },
       colors: { primary: '#F7E1D7', accent: '#8B7355', gold: '#D4B98C', light: '#FBF8F5', dark: '#5C4A3E' },
       culture: {
         history:   { icon: '📜', title: '历史价值', desc: '藕粉制作技艺可追溯至宋代，江南水乡的藕农们世代传承着这一古老手艺...' },
@@ -490,11 +490,11 @@
         { letter: '纯', label: '纯粹无添加' }
       ],
       craftSteps: [
-        { num: 1, icon: '🔍', title: '选藕', desc: '精选新鲜莲藕，藕身圆润饱满，淀粉含量高', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=选藕' },
-        { num: 2, icon: '⚪', title: '磨浆', desc: '石磨慢磨成浆，保留藕香与营养', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=磨浆' },
-        { num: 3, icon: '🧴', title: '过滤', desc: '过滤布袋多层过滤，去除杂质，提取纯浆', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=过滤' },
-        { num: 4, icon: '🧺', title: '沉淀', desc: '纯浆静置沉淀，倒去上层清液，留下藕粉湿块', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=沉淀' },
-        { num: 5, icon: '♨️', title: '蒸煮', desc: '湿藕粉入蒸笼蒸熟，切片晾干即成纯正藕粉', img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=蒸煮' }
+        { num: 1, icon: '🔍', title: '选藕', desc: '精选新鲜莲藕，藕身圆润饱满，淀粉含量高', img: 'assets/oufen/mmexport1780359848568.jpg' },
+        { num: 2, icon: '⚪', title: '磨浆', desc: '石磨慢磨成浆，保留藕香与营养', img: 'assets/oufen/mmexport1780359849748.jpg' },
+        { num: 3, icon: '🧴', title: '过滤', desc: '过滤布袋多层过滤，去除杂质，提取纯浆', img: 'assets/oufen/mmexport1780359851295.jpg' },
+        { num: 4, icon: '🧺', title: '沉淀', desc: '纯浆静置沉淀，倒去上层清液，留下藕粉湿块', img: 'assets/oufen/mmexport1780359852803.jpg' },
+        { num: 5, icon: '♨️', title: '蒸煮', desc: '湿藕粉入蒸笼蒸熟，切片晾干即成纯正藕粉', img: 'assets/oufen/mmexport1780359854152.jpg' }
       ],
       reading: {
         books: [
@@ -503,19 +503,18 @@
           { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=非遗小传承人', desc: '了解藕粉非遗文化' }
         ],
         audio: [
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=藕粉的传说', desc: '民间故事' },
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=小藕的旅行', desc: '童话故事' },
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=江南采藕歌', desc: '童谣' }
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉制作' },
+          { img: 'assets/xianhuabing/reading_audio02.jpg', desc: '鲜花饼制作' },
+          { img: 'assets/mahua/reading_audio03.jpg', desc: '麻花制作' }
         ],
         video: [
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=藕粉是怎么做出来的', desc: '纪录片' },
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=藕的生长周期', desc: '自然科普' },
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=非遗手艺人的一天', desc: '人物访谈' }
+          { img: 'assets/1618634110353097372_thumb.jpg', desc: '藕粉制作' },
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉发展' },
+          { img: 'assets/oufen/reading_video03.jpg', desc: '藕粉科普' }
         ],
         works: [
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=藕粉画作品展', desc: '小画家：乐乐' },
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=手工藕粉制作', desc: '小厨师：朵朵' },
-          { img: 'https://placehold.co/300x180/F7E1D7/8B7355?text=藕粉包装设计', desc: '设计师：豆豆' }
+          { img: 'assets/qita/mmexport1780421389326.jpg', desc: '采莲藕' },
+          { img: 'assets/qita/mmexport1780421387116.jpg', desc: '做藕粉' }
         ]
       },
       works: [
@@ -550,12 +549,12 @@
       bannerImg: 'assets/mahua/banner_thumb.jpg',
       discoverTitle: '发现',
       discover: [
-        { id: 'origin', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=麻花+的由来', title: '麻花的由来', desc: '宋代起源的千年酥脆传奇' },
-        { id: 'variety', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=麻花+的种类', title: '麻花的种类', desc: '各地麻花的风味与特点' },
+        { id: 'origin', img: 'assets/mahua/mmexport1780360293422.jpg', title: '麻花的由来', desc: '宋代起源的千年酥脆传奇' },
+        { id: 'variety', img: 'assets/mahua/mmexport1780358735250.jpg', title: '麻花的种类', desc: '各地麻花的风味与特点' },
         { id: 'twist', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=拧麻花+技巧', title: '拧麻花技巧', desc: '一搓一拧间的功夫与学问' },
         { id: 'snack', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=传统+小食', title: '传统小食文化', desc: '街头巷尾的酥脆童年记忆' }
       ],
-      master: { name: '王师傅', desc: '三代传承麻花手艺，一双手搓出百年酥脆滋味...', initial: '王' },
+      master: { name: '吕师傅', desc: '非遗技艺传承人·吕自彬，传承百年手艺·发扬地方特色', initial: '吕', image: 'assets/qita/Snipaste_2026-06-03_14-05-44.png' },
       colors: { primary: '#D4A06A', accent: '#8B6914', gold: '#E8C87A', light: '#FDF6EC', dark: '#5C4020' },
       culture: {
         history:   { icon: '📜', title: '历史价值', desc: '麻花起源于宋代，历经千年演变，成为中国民间最具代表性的传统面点之一...' },
@@ -575,11 +574,11 @@
         { letter: '巧', label: '造型精巧' }
       ],
       craftSteps: [
-        { num: 1, icon: '🥣', title: '备料', desc: '准备面粉、鸡蛋、白糖等原料，按比例调配', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=备料' },
-        { num: 2, icon: '✊', title: '揉面', desc: '将面粉加入鸡蛋、温水，揉成光滑面团', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=揉面' },
-        { num: 3, icon: '⏳', title: '醒面', desc: '面团盖上湿布，静置醒发三十分钟', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=醒面' },
-        { num: 4, icon: '✋', title: '扭花', desc: '将面团搓成长条，左右手反向拧成麻花状', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=扭花' },
-        { num: 5, icon: '🍳', title: '炸制', desc: '油温六成热，放入麻花炸至金黄酥脆捞出', img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=炸制' }
+        { num: 1, icon: '🥣', title: '备料', desc: '准备面粉、鸡蛋、白糖等原料，按比例调配', img: 'assets/mahua/mmexport1780358733747.jpg' },
+        { num: 2, icon: '✊', title: '揉面', desc: '将面粉加入鸡蛋、温水，揉成光滑面团', img: 'assets/mahua/mmexport1780358735250.jpg' },
+        { num: 3, icon: '⏳', title: '醒面', desc: '面团盖上湿布，静置醒发三十分钟', img: 'assets/mahua/mmexport1780358737960.jpg' },
+        { num: 4, icon: '✋', title: '扭花', desc: '将面团搓成长条，左右手反向拧成麻花状', img: 'assets/mahua/mmexport1780358739356.jpg' },
+        { num: 5, icon: '🍳', title: '炸制', desc: '油温六成热，放入麻花炸至金黄酥脆捞出', img: 'assets/mahua/mmexport1780358740700.jpg' }
       ],
       reading: {
         books: [
@@ -588,18 +587,18 @@
           { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=街头小吃的故事', desc: '了解麻花的历史' }
         ],
         audio: [
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=麻花的传说', desc: '民间故事' },
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=搓麻花的小手', desc: '童谣' },
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=老街味道', desc: '音频故事' }
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉制作' },
+          { img: 'assets/xianhuabing/reading_audio02.jpg', desc: '鲜花饼制作' },
+          { img: 'assets/mahua/reading_audio03.jpg', desc: '麻花制作' }
         ],
         video: [
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=麻花是怎么炸出来的', desc: '美食纪录片' },
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=面粉的魔法', desc: '烹饪科普' },
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=非遗面点大师', desc: '人物访谈' }
+          { img: 'assets/1618634110353097372_thumb.jpg', desc: '藕粉制作' },
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉发展' },
+          { img: 'assets/oufen/reading_video03.jpg', desc: '藕粉科普' }
         ],
         works: [
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=麻花创意画', desc: '小画家：天天' },
-          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=迷你小麻花', desc: '小厨师：果果' },
+          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=麻花创意画', desc: '采莲藕' },
+          { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=迷你小麻花', desc: '做藕粉' },
           { img: 'https://placehold.co/300x180/D4A06A/FFFFFF?text=麻花包装设计', desc: '设计师：糖糖' }
         ]
       },
@@ -635,8 +634,8 @@
       bannerImg: 'assets/xianhuabing/banner_thumb.jpg',
       discoverTitle: '发现',
       discover: [
-        { id: 'legend', img: 'https://placehold.co/300x180/F0C4C4/C48A8A?text=鲜花饼+传说', title: '鲜花饼的传说', desc: '一朵玫瑰花背后的浪漫故事' },
-        { id: 'flowers', img: 'https://placehold.co/300x180/F0C4C4/C48A8A?text=可食用+花卉', title: '可食用花卉', desc: '哪些花可以做成美味点心' },
+        { id: 'legend', img: 'assets/xianhuabing/mmexport1780358787783.jpg', title: '鲜花饼的传说', desc: '一朵玫瑰花背后的浪漫故事' },
+        { id: 'flowers', img: 'assets/xianhuabing/mmexport1780358742133.jpg', title: '可食用花卉', desc: '哪些花可以做成美味点心' },
         { id: 'bake', img: 'https://placehold.co/300x180/F0C4C4/C48A8A?text=花香+秘诀', title: '花香制作秘诀', desc: '锁住花香的古法烘焙技艺' },
         { id: 'season', img: 'https://placehold.co/300x180/F0C4C4/C48A8A?text=四季+花食', title: '四季花食文化', desc: '跟着节气吃花，品味自然馈赠' }
       ],
@@ -660,11 +659,11 @@
         { letter: '鲜', label: '新鲜可口' }
       ],
       craftSteps: [
-        { num: 1, icon: '🌹', title: '备馅', desc: '新鲜玫瑰花加入白糖腌制，揉入熟糯米粉制成玫瑰馅', img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=备馅' },
-        { num: 2, icon: '✋', title: '揉皮', desc: '分别制作油皮和油酥，猪油与面粉充分揉合', img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=揉皮' },
-        { num: 3, icon: '🥟', title: '包制', desc: '酥皮包入玫瑰馅料，收口捏紧成球状', img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=包制' },
-        { num: 4, icon: '🖨️', title: '压模', desc: '放入木模具中压扁成型，印出漂亮花纹', img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=压模' },
-        { num: 5, icon: '🔥', title: '烘烤', desc: '烤箱预热后放入，烤至表面金黄酥脆即可', img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=烘烤' }
+        { num: 1, icon: '🌹', title: '备馅', desc: '新鲜玫瑰花加入白糖腌制，揉入熟糯米粉制成玫瑰馅', img: 'assets/xianhuabing/mmexport1780358782010.jpg' },
+        { num: 2, icon: '✋', title: '揉皮', desc: '分别制作油皮和油酥，猪油与面粉充分揉合', img: 'assets/xianhuabing/mmexport1780358783191.jpg' },
+        { num: 3, icon: '🥟', title: '包制', desc: '酥皮包入玫瑰馅料，收口捏紧成球状', img: 'assets/xianhuabing/mmexport1780358784317.jpg' },
+        { num: 4, icon: '🖨️', title: '压模', desc: '放入木模具中压扁成型，印出漂亮花纹', img: 'assets/xianhuabing/mmexport1780358785510.jpg' },
+        { num: 5, icon: '🔥', title: '烘烤', desc: '烤箱预热后放入，烤至表面金黄酥脆即可', img: 'assets/xianhuabing/mmexport1780358786657.jpg' }
       ],
       reading: {
         books: [
@@ -673,18 +672,18 @@
           { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=小小面点师', desc: '学做鲜花饼' }
         ],
         audio: [
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=玫瑰花仙子的故事', desc: '童话故事' },
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=花园童谣', desc: '童谣' },
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=彩云之南的味道', desc: '音频故事' }
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉制作' },
+          { img: 'assets/xianhuabing/reading_audio02.jpg', desc: '鲜花饼制作' },
+          { img: 'assets/mahua/reading_audio03.jpg', desc: '麻花制作' }
         ],
         video: [
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=鲜花饼制作全过程', desc: '美食纪录片' },
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=玫瑰花的生长', desc: '自然科普' },
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=非遗糕点传承人', desc: '人物访谈' }
+          { img: 'assets/1618634110353097372_thumb.jpg', desc: '藕粉制作' },
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉发展' },
+          { img: 'assets/oufen/reading_video03.jpg', desc: '藕粉科普' }
         ],
         works: [
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=玫瑰花创意画', desc: '小画家：朵朵' },
-          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=彩泥鲜花饼', desc: '手工：萌萌' },
+          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=玫瑰花创意画', desc: '采莲藕' },
+          { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=彩泥鲜花饼', desc: '做藕粉' },
           { img: 'https://placehold.co/300x180/F0C4C4/8B6B6B?text=花园手抄报', desc: '设计师：欣欣' }
         ]
       },
@@ -720,8 +719,8 @@
       bannerImg: 'assets/taigubing/banner_thumb.jpg',
       discoverTitle: '发现',
       discover: [
-        { id: 'story', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=太谷饼+故事', title: '太谷饼的故事', desc: '山西百年名点的传奇往事' },
-        { id: 'shanxi', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=山西+面食', title: '山西面食文化', desc: '一面百样的面食王国' },
+        { id: 'story', img: 'assets/taigubing/mmexport1780358842884.jpg', title: '太谷饼的故事', desc: '山西百年名点的传奇往事' },
+        { id: 'shanxi', img: 'assets/taigubing/mmexport1780360294785.jpg', title: '山西面食文化', desc: '一面百样的面食王国' },
         { id: 'ancient', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=古法+烘焙', title: '古法烘焙技艺', desc: '传统炉火烤制的时光味道' },
         { id: 'grain', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=五谷+文化', title: '五谷杂粮文化', desc: '黄土地上的五谷智慧与传承' }
       ],
@@ -745,11 +744,11 @@
         { letter: '醇', label: '口味醇正' }
       ],
       craftSteps: [
-        { num: 1, icon: '🥣', title: '和面', desc: '面粉加入糖稀、酥油、温水，和成柔软面团', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=和面' },
-        { num: 2, icon: '✋', title: '起酥', desc: '面团反复折叠擀制，形成层层酥层', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=起酥' },
-        { num: 3, icon: '🥟', title: '包馅', desc: '酥皮包入枣泥馅，收口捏紧', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=包馅' },
-        { num: 4, icon: '🫓', title: '压型', desc: '放入木模具压扁成型，表面沾满芝麻', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=压型' },
-        { num: 5, icon: '🔥', title: '烘烤', desc: '放入烤炉烘烤至表面金黄，三翻三烤出香味', img: 'https://placehold.co/300x180/E8C87A/6B5020?text=烘烤' }
+        { num: 1, icon: '🥣', title: '和面', desc: '面粉加入糖稀、酥油、温水，和成柔软面团', img: 'assets/taigubing/mmexport1780358820213.jpg' },
+        { num: 2, icon: '✋', title: '起酥', desc: '面团反复折叠擀制，形成层层酥层', img: 'assets/taigubing/mmexport1780358821426.jpg' },
+        { num: 3, icon: '🥟', title: '包馅', desc: '酥皮包入枣泥馅，收口捏紧', img: 'assets/taigubing/mmexport1780358823408.jpg' },
+        { num: 4, icon: '🫓', title: '压型', desc: '放入木模具压扁成型，表面沾满芝麻', img: 'assets/taigubing/mmexport1780358825197.jpg' },
+        { num: 5, icon: '🔥', title: '烘烤', desc: '放入烤炉烘烤至表面金黄，三翻三烤出香味', img: 'assets/taigubing/mmexport1780358828100.jpg' }
       ],
       reading: {
         books: [
@@ -758,18 +757,18 @@
           { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=山西面食王国', desc: '探索面食的奥秘' }
         ],
         audio: [
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=太谷饼的传说', desc: '民间故事' },
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=卖饼小童谣', desc: '童谣' },
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=晋商万里行', desc: '历史故事' }
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉制作' },
+          { img: 'assets/xianhuabing/reading_audio02.jpg', desc: '鲜花饼制作' },
+          { img: 'assets/mahua/reading_audio03.jpg', desc: '麻花制作' }
         ],
         video: [
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=太谷饼古法制作', desc: '非遗纪录片' },
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=红枣的生长', desc: '自然科普' },
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=晋商老字号传奇', desc: '文化专题' }
+          { img: 'assets/1618634110353097372_thumb.jpg', desc: '藕粉制作' },
+          { img: 'assets/oufen/reading_audio01.jpg', desc: '藕粉发展' },
+          { img: 'assets/oufen/reading_video03.jpg', desc: '藕粉科普' }
         ],
         works: [
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=太谷饼创意画', desc: '小画家：阳阳' },
-          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=泥塑太谷饼', desc: '手工：轩轩' },
+          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=太谷饼创意画', desc: '采莲藕' },
+          { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=泥塑太谷饼', desc: '做藕粉' },
           { img: 'https://placehold.co/300x180/E8C87A/6B5020?text=山西美食地图', desc: '设计师：琪琪' }
         ]
       },
@@ -814,28 +813,14 @@
   }
 
   // ── Shop Items (周边购买) ────────────────────────────────────
-  var SHOP_ITEMS = {
-    oufen: [
-      { id: 'diy', name: '藕粉DIY体验套装', price: 68, originPrice: 88, image: 'https://placehold.co/300x300/F7E1D7/8B7355?text=藕粉+DIY套装', desc: '包含莲藕模型、研磨工具、藕粉品尝装，让孩子亲手体验藕粉制作', sold: 326, link: 'https://example.com/shop/oufen-diy' },
-      { id: 'book', name: '藕粉的故事绘本', price: 39, originPrice: 49, image: 'https://placehold.co/300x300/F7E1D7/8B7355?text=藕粉+绘本', desc: '精美的藕粉文化绘本，图文并茂讲述藕粉的前世今生', sold: 508, link: 'https://example.com/shop/oufen-book' },
-      { id: 'gift', name: '非遗藕粉礼盒', price: 128, originPrice: 158, image: 'https://placehold.co/300x300/F7E1D7/8B7355?text=藕粉+礼盒', desc: '正宗西湖藕粉礼盒装，精美包装，送礼自用皆宜', sold: 189, link: 'https://example.com/shop/oufen-gift' }
-    ],
-    mahua: [
-      { id: 'diy', name: '麻花手工制作套装', price: 58, originPrice: 78, image: 'https://placehold.co/300x300/D4A06A/FFFFFF?text=麻花+DIY套装', desc: '面团、模具、包装盒齐全，在家也能做酥脆麻花', sold: 245, link: 'https://example.com/shop/mahua-diy' },
-      { id: 'book', name: '麻花文化绘本', price: 39, originPrice: 49, image: 'https://placehold.co/300x300/D4A06A/FFFFFF?text=麻花+绘本', desc: '了解麻花的千年历史，从街头小吃到非遗文化', sold: 412, link: 'https://example.com/shop/mahua-book' },
-      { id: 'gift', name: '天津麻花礼盒', price: 88, originPrice: 108, image: 'https://placehold.co/300x300/D4A06A/FFFFFF?text=麻花+礼盒', desc: '传统麻花零食礼盒，酥脆可口，老少皆宜', sold: 567, link: 'https://example.com/shop/mahua-gift' }
-    ],
-    rosecake: [
-      { id: 'diy', name: '鲜花饼烘焙套装', price: 72, originPrice: 92, image: 'https://placehold.co/300x300/F0C4C4/C48A8A?text=鲜花饼+烘焙', desc: '食用玫瑰花酱、酥皮模具、烘焙工具一应俱全', sold: 178, link: 'https://example.com/shop/rosecake-diy' },
-      { id: 'book', name: '可食用花卉图鉴', price: 45, originPrice: 55, image: 'https://placehold.co/300x300/F0C4C4/C48A8A?text=花卉+图鉴', desc: '认识各种可食用花卉，了解花食文化', sold: 289, link: 'https://example.com/shop/rosecake-book' },
-      { id: 'gift', name: '云南鲜花饼礼盒', price: 108, originPrice: 138, image: 'https://placehold.co/300x300/F0C4C4/C48A8A?text=鲜花饼+礼盒', desc: '正宗云南鲜花饼，酥脆花香，纯手工制作', sold: 423, link: 'https://example.com/shop/rosecake-gift' }
-    ],
-    taigubing: [
-      { id: 'diy', name: '太谷饼烘焙工具包', price: 62, originPrice: 82, image: 'https://placehold.co/300x300/E8C87A/6B5020?text=太谷饼+工具包', desc: '传统烤炉模型、制作工具，体验山西古法烘焙', sold: 156, link: 'https://example.com/shop/taigubing-diy' },
-      { id: 'book', name: '山西面食文化绘本', price: 39, originPrice: 49, image: 'https://placehold.co/300x300/E8C87A/6B5020?text=山西+面食绘本', desc: '一面百样，走进山西面食的丰富多彩的世界', sold: 334, link: 'https://example.com/shop/taigubing-book' },
-      { id: 'gift', name: '太谷饼传统礼盒', price: 98, originPrice: 128, image: 'https://placehold.co/300x300/E8C87A/6B5020?text=太谷饼+礼盒', desc: '正宗太谷饼伴手礼，枣香浓郁，回味悠长', sold: 278, link: 'https://example.com/shop/taigubing-gift' }
-    ]
-  };
+  var SHOP_ITEMS = [
+    { id: 's1', name: '便签夹', price: 21.9, originPrice: 29.9, image: 'assets/shop_thumbs/mmexport1780421395257.jpg', desc: '精美文创便签夹，4个装，记录生活小确幸', sold: 520 },
+    { id: 's2', name: '手机气囊支架', price: 26.9, originPrice: 35.9, image: 'assets/shop_thumbs/mmexport1780421401231.jpg', desc: '可爱非遗主题气囊支架，单个装，个性装饰', sold: 380 },
+    { id: 's3', name: '明信片', price: 19.9, originPrice: 25.9, image: 'assets/shop_thumbs/mmexport1780421411578.jpg', desc: '非遗主题精美明信片，5张/套，可收藏可寄送', sold: 650 },
+    { id: 's4', name: '扇子', price: 29.9, originPrice: 39.9, image: 'assets/shop_thumbs/mmexport1780421403306.jpg', desc: '非遗元素手工扇子礼盒装，包含扇子与精美礼品', sold: 280 },
+    { id: 's5', name: '阅读灯', price: 84.9, originPrice: 99.9, image: 'assets/shop_thumbs/mmexport1780421405687.jpg', desc: '护眼阅读灯，非遗纹样设计，温馨伴读', sold: 160 },
+    { id: 's6', name: '抱枕', price: 54.9, originPrice: 69.9, image: 'assets/shop_thumbs/mmexport1780421414632.jpg', desc: '枕套54.9元/个，枕芯64.9元/个（请联系客服备注），柔软亲肤', sold: 210 }
+  ];
 
   window.SHOP_ITEMS = SHOP_ITEMS;
 

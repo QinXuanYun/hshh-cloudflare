@@ -48,6 +48,7 @@
     html += '</div></section>';
     return html;
   }
+  window.renderProductSwitcher = renderProductSwitcher;
 
   // ── Page Render Functions (exported as globals) ──
   window.renderHome = function (product) {
@@ -112,13 +113,13 @@
           <h2 class="section-title">大师专栏</h2>\
         </div>\
         <div class="masters-list">\
-' + (function() { var mh = ''; var allP = window.getProductList(); for (var mi = 0; mi < Math.min(allP.length, 2); mi++) { var mp = allP[mi]; mh += '<div class=\"master-card\"><div class=\"master-avatar\"><img src=\"https://placehold.co/80x80/' + mp.colors.primary.replace('#','') + '/' + mp.colors.accent.replace('#','') + '?text=' + mp.master.initial + '\" alt=\"' + mp.master.name + '\"></div><div class=\"master-info\"><h3>非遗传承人·' + mp.master.name + '</h3><p>' + mp.master.desc + '</p><a class=\"master-link\" href=\"#\">了解更多 →</a></div></div>'; } return mh; })() + '\
+' + (function() { var mh = ''; var allP = window.getProductList(); for (var mi = 0; mi < Math.min(allP.length, 2); mi++) { var mp = allP[mi]; mh += '<div class=\"master-card\"><div class=\"master-avatar\"><img src=\"' + (mp.master.image || 'https://placehold.co/80x80/' + mp.colors.primary.replace('#','') + '/' + mp.colors.accent.replace('#','') + '?text=' + mp.master.initial) + '\" alt=\"' + mp.master.name + '\"></div><div class=\"master-info\"><h3>非遗传承人·' + mp.master.name + '</h3><p>' + mp.master.desc + '</p><a class=\"master-link\" href=\"#\">了解更多 →</a></div></div>'; } return mh; })() + '\
         </div>\
       </section>\
       \
       \
       <!-- AR扫一扫入口 -->\
-      <a class="ar-scan-btn" href="#viewer?scan">📷 AR 扫一扫</a>\
+      <a class="ar-scan-btn" href="#viewer?model=oufen">📷 AR 扫一扫</a>\
     ';
   };
 
@@ -270,6 +271,47 @@
               </div>\
             </div>\
           </section>\
+          <section class="study-section">\
+            <h2 class="study-section-title">🛒 购买套餐</h2>\
+            <div class="study-purchase study-purchase-tiers">\
+              <div class="purchase-card purchase-tier">\
+                <h3 class="purchase-title">🏫 幼儿园集体团</h3>\
+                <div class="purchase-price-badge">¥799<small>/人</small></div>\
+                <ul class="purchase-features">\
+                  <li>🎫 两日完整研学路线</li>\
+                  <li>🎨 非遗手工材料包</li>\
+                  <li>🎧 专业讲解导览</li>\
+                  <li>🛡️ 幼儿安全保险</li>\
+                  <li>📋 规格：30名幼儿团托管式研学，解放家长，安全省心</li>\
+                </ul>\
+                <button class="purchase-btn" onclick="window.showPurchaseModal(\'' + product + '\', \'kindergarten\')">立即购买</button>\
+              </div>\
+              <div class="purchase-card purchase-tier">\
+                <h3 class="purchase-title">👨‍👩‍👧 亲子团·一大一小</h3>\
+                <div class="purchase-price-badge">¥1,999<small>/组</small></div>\
+                <ul class="purchase-features">\
+                  <li>🎫 两日完整研学路线</li>\
+                  <li>🎨 非遗手工材料包</li>\
+                  <li>🎧 专业讲解导览</li>\
+                  <li>🛡️ 幼儿安全保险</li>\
+                  <li>📋 规格：2人/组，15组成团，亲子陪伴，非遗体验，高性价比之选</li>\
+                </ul>\
+                <button class="purchase-btn" onclick="window.showPurchaseModal(\'' + product + '\', \'family1\')">立即购买</button>\
+              </div>\
+              <div class="purchase-card purchase-tier">\
+                <h3 class="purchase-title">👨‍👩‍👧‍👦 亲子团·两大一小</h3>\
+                <div class="purchase-price-badge">¥2,699<small>/组</small></div>\
+                <ul class="purchase-features">\
+                  <li>🎫 两日完整研学路线</li>\
+                  <li>🎨 非遗手工材料包 ×3</li>\
+                  <li>🎧 专业讲解导览</li>\
+                  <li>🛡️ 幼儿安全保险 ×3</li>\
+                  <li>📋 规格：3人/组，10组成团，全家沉浸式参与，家庭研学首选</li>\
+                </ul>\
+                <button class="purchase-btn" onclick="window.showPurchaseModal(\'' + product + '\', \'family2\')">立即购买</button>\
+              </div>\
+            </div>\
+          </section>\
         </div>\
       ';
     }
@@ -321,7 +363,7 @@
     return '\
       <section class="profile-header">\
         <div class="profile-avatar">\
-          <img src="https://placehold.co/80x80/F7E1D7/8B7355?text=\u547c\u547c" alt="\u7528\u6237\u5934\u50cf">\
+          <img src="assets/logo/mmexport1780303055398.jpg" alt="\u7528\u6237\u5934\u50cf">\
         </div>\
         <div class="profile-user">\
           <h2 class="profile-name">\u975e\u9057\u5c0f\u8fbe\u4eba</h2>\
@@ -339,7 +381,6 @@
           <span class="profile-menu-icon">📖</span>\
           <div class="profile-menu-info">\
             <span class="profile-menu-label">\u6211\u7684\u6536\u85cf</span>\
-            <span class="profile-menu-desc" id="profile-col-count">\u5df2\u6536\u85cf ' + colCount + ' \u4e2a\u5185\u5bb9</span>\
           </div>\
           <span class="profile-menu-arrow">\u203a</span>\
         </div>\
@@ -347,7 +388,6 @@
           <span class="profile-menu-icon">📜</span>\
           <div class="profile-menu-info">\
             <span class="profile-menu-label">\u7814\u5b66\u8bb0\u5f55</span>\
-            <span class="profile-menu-desc" id="profile-badge-count">\u5df2\u5b8c\u6210 ' + badgeCount + ' \u9879\u6210\u5c31</span>\
           </div>\
           <span class="profile-menu-arrow">\u203a</span>\
         </div>\
@@ -355,7 +395,6 @@
           <span class="profile-menu-icon">🏆</span>\
           <div class="profile-menu-info">\
             <span class="profile-menu-label">\u6210\u5c31\u5fbd\u7ae0</span>\
-            <span class="profile-menu-desc">\u5df2\u83b7\u5f97 ' + badgeCount + ' \u679a\u5fbd\u7ae0</span>\
           </div>\
           <span class="profile-menu-arrow">\u203a</span>\
         </div>\
@@ -363,7 +402,6 @@
           <span class="profile-menu-icon">📥</span>\
           <div class="profile-menu-info">\
             <span class="profile-menu-label">\u79bb\u7ebf\u8d44\u6e90</span>\
-            <span class="profile-menu-desc">\u5df2\u7f13\u5b58 2 \u4e2a\u6a21\u578b</span>\
           </div>\
           <span class="profile-menu-arrow">\u203a</span>\
         </div>\
@@ -371,7 +409,6 @@
           <span class="profile-menu-icon">📐</span>\
           <div class="profile-menu-info">\
             <span class="profile-menu-label">\u6211\u7684\u4f5c\u54c1</span>\
-            <span class="profile-menu-desc">\u4e0a\u4f20 8 \u4e2a\u4f5c\u54c1</span>\
           </div>\
           <span class="profile-menu-arrow">\u203a</span>\
         </div>\
@@ -393,7 +430,7 @@
       </section>\
       <section class="profile-section">\
         <div class="section-header">\
-          <h2 class="section-title">\u8bbe\u7f6e</h2>\
+          <h2 class="section-title">\u5feb\u6377\u8bbe\u7f6e</h2>\
         </div>\
         <div class="profile-settings">\
           <div class="profile-setting-item">\
@@ -636,7 +673,7 @@
           <h2 class="section-title">🏛\ufe0f \u975e\u9057\u6587\u5316\u00b7\u56db\u5927\u4ef7\u503c</h2>\
         </div>\
         <div class="culture-grid-inline">\
-' + (function() { var cultureKeys = ['history', 'craft', 'humanity', 'spread']; var ch = ''; for (var ci2 = 0; ci2 < cultureKeys.length; ci2++) { var val = p.culture[cultureKeys[ci2]]; ch += '<div class=\"culture-card\"><img src=\"https://placehold.co/400x200/' + p.colors.primary.replace('#','') + '/' + p.colors.accent.replace('#','') + '?text=' + encodeURIComponent(val.title) + '\" alt=\"' + val.title + '\"><div class=\"culture-card-body\"><span class=\"culture-card-icon\">' + val.icon + '</span><h3 class=\"culture-card-title\">' + val.title + '</h3><p class=\"culture-card-desc\">' + val.desc + '</p><button class=\"culture-card-btn\" onclick=\"window.showCultureModal(\'' + product + '\',\'' + val.title + '\')\">\u4e86\u89e3\u8be6\u60c5</button></div></div>'; } return ch; })() + '\
+' + (function() { var cultureKeys = ['history', 'craft', 'humanity', 'spread']; var ch = ''; for (var ci2 = 0; ci2 < cultureKeys.length; ci2++) { var val = p.culture[cultureKeys[ci2]]; ch += '<div class=\"culture-card\"><div class=\"culture-card-body\"><span class=\"culture-card-icon\">' + val.icon + '</span><h3 class=\"culture-card-title\">' + val.title + '</h3><p class=\"culture-card-desc\">' + val.desc + '</p><button class=\"culture-card-btn\" onclick=\"window.showCultureModal(\'' + product + '\',\'' + val.title + '\')\">\u4e86\u89e3\u8be6\u60c5</button></div></div>'; } return ch; })() + '\
         </div>\
       </section>\
     ';
@@ -650,7 +687,7 @@
       <section class="reading-banner">\
         <div class="reading-banner-bg">\
           <h1 class="reading-banner-title">\u667a\u80fd\u4f34\u8bfb</h1>\
-          <p class="reading-banner-desc">\u8fb9\u770b\u8fb9\u5b66\uff0c\u966a\u4f34\u5b69\u5b50\u63a2\u7d22\u975e\u9057\u6587\u5316</p>\
+          <p class="reading-banner-desc">\u8fb9\u542c\u3001\u8fb9\u770b\u3001\u8fb9\u5b66\uff0c\u966a\u4f34\u5b69\u5b50\u63a2\u7d22\u975e\u9057\u6587\u5316</p>\
           <div class="reading-banner-divider"><\/div>\
         </div>\
       </section>';
@@ -790,6 +827,58 @@
     return match ? decodeURIComponent(match[1]) : null;
   }
 
+  // ── QR Scanner ───────────────────────────────────────────────
+  window.Scanner = {
+    stream: null,
+    interval: null,
+    start: function() {
+      var video = document.getElementById('scanner-video');
+      var canvas = document.getElementById('scanner-canvas');
+      if (!video || !canvas) return;
+
+      var self = this;
+      navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } })
+        .then(function(s) {
+          self.stream = s;
+          video.srcObject = s;
+          video.setAttribute('playsinline', true);
+          video.play();
+
+          var ctx = canvas.getContext('2d');
+          // Scan every 300ms
+          self.interval = setInterval(function() {
+            if (video.readyState !== video.HAVE_ENOUGH_DATA) return;
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            var code = jsQR(imageData.data, imageData.width, imageData.height);
+            if (code) {
+              var productId = code.data.trim().toLowerCase();
+              var ids = window.PRODUCT_IDS;
+              if (ids.indexOf(productId) > -1) {
+                self.stop();
+                window.location.hash = '#page/' + productId;
+              }
+            }
+          }, 300);
+        })
+        .catch(function(err) {
+          console.error('Scanner camera error:', err);
+          document.querySelector('.scanner-hint').textContent = '无法访问摄像头: ' + err.message;
+        });
+    },
+    stop: function() {
+      if (this.interval) { clearInterval(this.interval); this.interval = null; }
+      if (this.stream) {
+        this.stream.getTracks().forEach(function(t) { t.stop(); });
+        this.stream = null;
+      }
+      var video = document.getElementById('scanner-video');
+      if (video) video.srcObject = null;
+    }
+  };
+
   // ── 3D Viewer / Scanner Page ─────────────────────────────────
   window.renderViewer = function () {
     var hash = window.location.hash;
@@ -800,7 +889,11 @@
     if (isScan) {
       setTimeout(function () {
         // Start QR scanner after DOM is ready
-        if (window.Scanner) window.Scanner.start();
+        if (window.Scanner) {
+          try { window.Scanner.start(); } catch (e) {
+            console.warn('[Scanner] Failed to start:', e.message);
+          }
+        }
       }, 100);
       return '\
         <div class="scanner-page">\
@@ -820,8 +913,11 @@
 
     // ── 3D Viewer mode ──────────────────────────────────────
     var modelId = getUrlParam(hash, 'model') || 'default';
-    var modelSrc = 'assets/models/' + modelId + '.usdz';
+    var modelSrc = '/assets/models/' + modelId + '.usdz';
     var modelName = (modelId !== 'default') ? '模型 ' + modelId : '加载中...';
+    var productNames = { oufen: '藕粉', mahua: '麻花', xianhuabing: '鲜花饼', taigubing: '太谷饼' };
+    var displayName = productNames[modelId] || modelName;
+    var posterSrc = '/assets/' + modelId + '/banner_thumb.jpg';
 
     return '\
       <div class="viewer-page">\
@@ -829,40 +925,43 @@
           <button class="viewer-back" onclick="window.history.back()">← 返回</button>\
           <span class="viewer-title">3D 预览</span>\
         </div>\
-        <model-viewer \
-          id="model-viewer" \
-          src="' + modelSrc + '" \
-          ar \
-          ar-modes="webxr scene-viewer quick-look" \
-          camera-controls \
-          auto-rotate \
-          shadow-intensity="1" \
-          style="width:100%; height:calc(100vh - 120px);">\
-        </model-viewer>\
+        <div id="viewer-container" style="position:relative;width:100%;min-height:60vh;">\
+          <div id="viewer-loading" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;color:#888;">\
+            <div style="font-size:48px;margin-bottom:16px;">⏳</div>\
+            <p>模型加载中...</p>\
+          </div>\
+          <model-viewer \
+            id="model-viewer" \
+            src="' + modelSrc + '" \
+            ar \
+            ar-modes="scene-viewer quick-look" \
+            poster="' + posterSrc + '" \
+            ios-src="' + modelSrc + '" \
+            shadow-intensity="1" \
+            style="width:100%; height:calc(100vh - 120px);">\
+          </model-viewer>\
+        </div>\
         <div class="viewer-info">\
-          <p id="viewer-model-name">' + modelName + '</p>\
+          <p id="viewer-model-name">' + displayName + '</p>\
         </div>\
       </div>\
     ';
   };
 
   // ── 周边购买 ──────────────────────────────────────────────────
-  window.renderShop = function (product) {
-    var p = window.getProduct(product);
-    var items = (window.SHOP_ITEMS || {})[product] || [];
+  window.renderShop = function () {
+    var items = window.SHOP_ITEMS || [];
     var cart = JSON.parse(localStorage.getItem('hshh_cart') || '[]');
     var html = '\
-      ' + window.renderProductSwitcher(product) + '\
       <div class="shop-page">\
         <div class="shop-header">\
-          <h2>' + p.emoji + ' ' + p.name + ' 周边好物</h2>\
+          <h2>🏪 周边购买</h2>\
           <p>精选非遗文创好物，把传统文化带回家</p>\
         </div>\
         <div class="shop-grid">';
     for (var si = 0; si < items.length; si++) {
       var it = items[si];
-      var iid = it.id + '-' + product;
-      var inCart = cart.indexOf(iid) > -1;
+      var inCart = cart.indexOf(it.id) > -1;
       var btnText = inCart ? '✓ 已加入' : '加入购物车';
       html += '\
         <div class="shop-card">\
@@ -879,8 +978,8 @@
             </div>\
             <p class="shop-sold">已售 ' + it.sold + ' 件</p>\
             <div class="shop-actions">\
-              <button class="shop-cart-btn" data-item-id="' + iid + '">' + btnText + '</button>\
-              <a class="shop-buy-btn" href="' + it.link + '" target="_blank" rel="noopener">立即购买</a>\
+              <button class="shop-cart-btn" data-item-id="' + it.id + '">' + btnText + '</button>\
+              <button class="shop-buy-btn" data-item-id="' + it.id + '">立即购买</button>\
             </div>\
           </div>\
         </div>';
@@ -953,6 +1052,30 @@
       })(cartBtns[ci]);
     }
 
+    // Buy now buttons — show an inline purchase form
+    var buyBtns = document.querySelectorAll('.shop-buy-btn');
+    for (var bi2 = 0; bi2 < buyBtns.length; bi2++) {
+      (function(btn) {
+        btn.addEventListener('click', function() {
+          var itemId = btn.getAttribute('data-item-id');
+          if (!itemId) return;
+          var items = window.SHOP_ITEMS || [];
+          var item = null;
+          for (var ii = 0; ii < items.length; ii++) {
+            if (items[ii].id === itemId) { item = items[ii]; break; }
+          }
+          if (!item) return;
+          var contactName = prompt('请输入收货人姓名：');
+          if (!contactName) return;
+          var contactPhone = prompt('请输入联系电话：');
+          if (!contactPhone) return;
+          var contactAddr = prompt('请输入收货地址：');
+          if (!contactAddr) return;
+          alert('✅ 购买成功！\\n\\n商品：' + item.name + '\\n价格：¥' + item.price + '\\n收货人：' + contactName + '\\n电话：' + contactPhone + '\\n地址：' + contactAddr + '\\n\\n我们将尽快为您发货。');
+        });
+      })(buyBtns[bi2]);
+    }
+
     // Checkout submit
     var checkoutBtn = document.getElementById('checkoutSubmit');
     if (checkoutBtn) {
@@ -991,15 +1114,13 @@
       list.innerHTML = '<p style="text-align:center;color:var(--accent);padding:20px;">购物车是空的，快去逛逛吧 🛒</p>';
       return;
     }
+    var shopItems = window.SHOP_ITEMS || [];
     var html = '';
     for (var ci = 0; ci < cart.length; ci++) {
-      var parts = cart[ci].split('-');
-      var itemId = parts[0];
-      var prodId = parts.slice(1).join('-');
-      var items = (window.SHOP_ITEMS || {})[prodId] || [];
+      var itemId = cart[ci];
       var item = null;
-      for (var ii = 0; ii < items.length; ii++) {
-        if (items[ii].id === itemId) { item = items[ii]; break; }
+      for (var ii = 0; ii < shopItems.length; ii++) {
+        if (shopItems[ii].id === itemId) { item = shopItems[ii]; break; }
       }
       if (item) {
         html += '<div class="checkout-item"><span class="checkout-item-name">' + item.name + '</span><span class="checkout-item-price">¥' + item.price + '</span></div>';
@@ -1007,6 +1128,56 @@
     }
     list.innerHTML = html;
   }
+
+  // ── After-render hooks ──────────────────────────────────────────
+  window.afterRenderViewer = function () {
+    // Wait for the custom element to be defined before trying to attach listeners
+    function setupViewer() {
+      var mv = document.getElementById('model-viewer');
+      var loading = document.getElementById('viewer-loading');
+      if (!mv) return;
+      mv.addEventListener('load', function () {
+        if (loading) loading.style.display = 'none';
+      });
+      mv.addEventListener('error', function () {
+        if (loading) {
+          loading.style.background = 'rgba(255,255,255,0.85)';
+          loading.innerHTML = '\
+            <div style="font-size:48px;margin-bottom:16px;">📱</div>\
+            <p style="font-size:16px;font-weight:bold;">3D预览暂不可用</p>\
+            <p style="font-size:14px;color:#aaa;margin-top:8px;">\
+              点击下方"AR"按钮，在增强现实中查看完整模型<br>\
+              支持设备：iOS 12+ (Safari) / Android 8+ (Chrome)</p>';
+        }
+      });
+      // Fallback: timeout after 15s if model never loads
+      setTimeout(function () {
+        if (loading && loading.style.display !== 'none') {
+          loading.innerHTML = '\
+            <div style="font-size:48px;margin-bottom:16px;">⏰</div>\
+            <p>加载超时</p>\
+            <p style="font-size:14px;color:#aaa;margin-top:8px;">请检查网络后重试</p>';
+        }
+      }, 15000);
+    }
+
+    // If customElements is supported and model-viewer isn't defined yet, wait for it
+    if (window.customElements && !customElements.get('model-viewer')) {
+      var checkInterval = setInterval(function () {
+        if (customElements.get('model-viewer')) {
+          clearInterval(checkInterval);
+          setTimeout(setupViewer, 100);
+        }
+      }, 200);
+      // Safety timeout: if element never loads, just try anyway
+      setTimeout(function () {
+        clearInterval(checkInterval);
+        setTimeout(setupViewer, 100);
+      }, 10000);
+    } else {
+      setTimeout(setupViewer, 100);
+    }
+  };
 
   // ── 电子订阅 ──────────────────────────────────────────────────
   window.renderEbookList = function () {
@@ -1072,51 +1243,21 @@
       locked = true;
 
       var newSrc = 'assets/huiben/' + n + '.jpg';
-      if (dir === 'left') {
-        // Flip page from left to right (prev)
-        flip.style.transition = 'transform 0.4s ease';
-        flip.style.transformOrigin = 'right center';
-        flip.style.transform = 'rotateY(90deg)';
-        setTimeout(function() {
-          img.src = newSrc;
-          flip.style.transition = 'none';
-          flip.style.transform = 'rotateY(-90deg)';
-          flip.style.transformOrigin = 'left center';
-          setTimeout(function() {
-            flip.style.transition = 'transform 0.4s ease';
-            flip.style.transform = 'rotateY(0deg)';
-            setTimeout(function() {
-              flip.style.transition = 'none';
-              flip.style.transformOrigin = 'center center';
-              current = n;
-              updateUI();
-              locked = false;
-            }, 420);
-          }, 20);
-        }, 420);
-      } else {
-        // Flip page from right to left (next)
-        flip.style.transition = 'transform 0.4s ease';
-        flip.style.transformOrigin = 'left center';
-        flip.style.transform = 'rotateY(-90deg)';
-        setTimeout(function() {
-          img.src = newSrc;
-          flip.style.transition = 'none';
-          flip.style.transform = 'rotateY(90deg)';
-          flip.style.transformOrigin = 'right center';
-          setTimeout(function() {
-            flip.style.transition = 'transform 0.4s ease';
-            flip.style.transform = 'rotateY(0deg)';
-            setTimeout(function() {
-              flip.style.transition = 'none';
-              flip.style.transformOrigin = 'center center';
-              current = n;
-              updateUI();
-              locked = false;
-            }, 420);
-          }, 20);
-        }, 420);
-      }
+      var cb = function() {
+        current = n;
+        updateUI();
+        locked = false;
+      };
+
+      // Simple flip: fade out, change src, fade in
+      flip.style.transition = 'opacity 0.25s ease';
+      flip.style.opacity = '0';
+      setTimeout(function() {
+        img.src = newSrc;
+        flip.style.transition = 'opacity 0.25s ease';
+        flip.style.opacity = '1';
+        setTimeout(cb, 260);
+      }, 260);
     }
 
     function updateUI() {
@@ -1165,7 +1306,8 @@
     profile: 'afterRenderProfile',
     shop:    'afterRenderShop',
     ebook:   'afterRenderEbookDetail',
-    study:   'afterRenderStudy'
+    study:   'afterRenderStudy',
+    viewer:  'afterRenderViewer'
   };
 
   function renderPage(pageName, product) {
@@ -1586,4 +1728,94 @@ window.closeMediaModal = function () {
   if (overlay) {
     overlay.parentNode.removeChild(overlay);
   }
+};
+
+/**
+ * Tier labels and prices for study tour purchase.
+ */
+var STUDY_TIERS = {
+  kindergarten: { label: '幼儿园集体团', priceLabel: '¥799/人' },
+  family1:      { label: '亲子团·一大一小', priceLabel: '¥1,999/组' },
+  family2:      { label: '亲子团·两大一小', priceLabel: '¥2,699/组' }
+};
+
+/**
+ * Show real purchase form modal for study tour product.
+ */
+window.showPurchaseModal = function (productId, tierKey) {
+  'use strict';
+  var existing = document.getElementById('purchaseModal');
+  if (existing) existing.parentNode.removeChild(existing);
+
+  var tier = STUDY_TIERS[tierKey] || STUDY_TIERS.kindergarten;
+  var p = window.getProduct(productId);
+  var name = p ? p.name : '';
+
+  var modal = document.createElement('div');
+  modal.id = 'purchaseModal';
+  modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;z-index:10000;';
+
+  modal.innerHTML = '\
+    <div style="background:#fff;border-radius:16px;padding:24px;max-width:380px;width:90%;box-shadow:0 8px 40px rgba(0,0,0,0.15);font-family:sans-serif;">\
+      <h2 style="margin:0 0 4px;font-size:18px;color:#333;text-align:center;">📋 研学购买确认</h2>\
+      <p style="margin:0 0 16px;font-size:13px;color:#999;text-align:center;">' + name + ' · ' + tier.label + ' <strong>' + tier.priceLabel + '</strong></p>\
+      <div style="margin-bottom:12px;">\
+        <label style="display:block;font-size:13px;color:#666;margin-bottom:4px;">家长姓名</label>\
+        <input id="purchaseContactName" type="text" placeholder="请输入家长姓名" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">\
+      </div>\
+      <div style="margin-bottom:12px;">\
+        <label style="display:block;font-size:13px;color:#666;margin-bottom:4px;">联系电话</label>\
+        <input id="purchaseContactPhone" type="tel" placeholder="请输入手机号" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">\
+      </div>\
+      <div style="margin-bottom:12px;">\
+        <label style="display:block;font-size:13px;color:#666;margin-bottom:4px;">儿童姓名（选填）</label>\
+        <input id="purchaseChildName" type="text" placeholder="请输入儿童姓名" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">\
+      </div>\
+      <div style="margin-bottom:16px;">\
+        <label style="display:block;font-size:13px;color:#666;margin-bottom:4px;">预约日期</label>\
+        <input id="purchaseDate" type="date" style="width:100%;padding:10px 12px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">\
+      </div>\
+      <div style="display:flex;gap:8px;">\
+        <button onclick="document.getElementById(\'purchaseModal\').parentNode.removeChild(document.getElementById(\'purchaseModal\'))" style="flex:1;padding:12px;border:1px solid #ddd;border-radius:24px;font-size:15px;color:#666;background:#fff;cursor:pointer;">取消</button>\
+        <button id="purchaseSubmitBtn" style="flex:2;padding:12px;border:none;border-radius:24px;font-size:15px;color:#fff;background:#D4A06A;cursor:pointer;">确认提交</button>\
+      </div>\
+    </div>';
+
+  document.body.appendChild(modal);
+
+  // Submit handler
+  var submitBtn = document.getElementById('purchaseSubmitBtn');
+  if (submitBtn) {
+    submitBtn.addEventListener('click', function () {
+      var contactName = document.getElementById('purchaseContactName').value.trim();
+      var contactPhone = document.getElementById('purchaseContactPhone').value.trim();
+      if (!contactName) { alert('请输入家长姓名'); return; }
+      if (!contactPhone || !/^1\d{10}$/.test(contactPhone)) { alert('请输入有效的手机号'); return; }
+      var childName = document.getElementById('purchaseChildName').value.trim();
+      var dateVal = document.getElementById('purchaseDate').value;
+      if (!dateVal) { alert('请选择预约日期'); return; }
+
+      // Build order summary
+      var orderInfo = '📋 订单确认\n\n' +
+        '产品：' + name + '\n' +
+        '套餐：' + tier.label + ' (' + tier.priceLabel + ')\n' +
+        '家长：' + contactName + '\n' +
+        '电话：' + contactPhone + '\n' +
+        (childName ? '儿童：' + childName + '\n' : '') +
+        '日期：' + dateVal + '\n\n' +
+        '我们会尽快与您联系确认，请保持电话畅通！';
+
+      alert(orderInfo);
+
+      // Close modal
+      var modalEl = document.getElementById('purchaseModal');
+      if (modalEl) modalEl.parentNode.removeChild(modalEl);
+    });
+  }
+
+  modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+      modal.parentNode.removeChild(modal);
+    }
+  });
 };

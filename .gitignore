@@ -1,0 +1,14 @@
+# Temp / helper scripts
+_fix_app.py
+fix_escapes*.py
+*.pyc
+__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+nohup.out

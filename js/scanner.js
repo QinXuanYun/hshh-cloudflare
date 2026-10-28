@@ -22,6 +22,20 @@
     onScan: null  // optional callback (modelId) => void
   };
 
+  /** Show camera-unavailable state in the DOM */
+  function showUnavailable() {
+    if (!scanner.active) {
+      var hint = document.querySelector('.scanner-hint');
+      if (hint) {
+        hint.textContent = '⚠️ 相机不可用，请在 HTTPS 或安全环境下打开，或检查相机权限设置';
+      }
+      var frame = document.querySelector('.scanner-frame');
+      if (frame) {
+        frame.style.display = 'none';
+      }
+    }
+  }
+
   /**
    * Start the QR scanner.
    * @param {function(string)=} onScan  Optional callback invoked when a QR
@@ -33,6 +47,12 @@
 
     if (typeof onScan === 'function') {
       scanner.onScan = onScan;
+    }
+
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      showUnavailable();
+      console.warn('[Scanner] mediaDevices not available (non-HTTPS context or unsupported browser)');
+      return;
     }
 
     // Prefer the rear-facing camera
@@ -75,6 +95,7 @@
       })
       .catch(function (err) {
         console.warn('[Scanner] Camera access denied:', err.message);
+        showUnavailable();
       });
   }
 

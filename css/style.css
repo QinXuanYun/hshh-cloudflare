@@ -2309,6 +2309,66 @@ model-viewer {
   box-shadow: 0 0 0 2px rgba(139, 115, 85, 0.15);
 }
 
+/* ── 研学购买套餐（三档） ────────────────────────────────── */
+.study-purchase-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.purchase-card.purchase-tier {
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  border: 1px solid var(--product-gold, #D4B98C);
+  transition: transform 0.2s;
+}
+.purchase-card.purchase-tier:hover {
+  transform: translateY(-2px);
+}
+.purchase-tier .purchase-title {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  color: var(--product-dark, #5C4A3E);
+  margin: 0 0 8px;
+}
+.purchase-tier .purchase-price-badge {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent, #8B7355);
+  margin-bottom: 8px;
+}
+.purchase-tier .purchase-price-badge small {
+  font-size: 13px;
+  font-weight: 400;
+  color: #999;
+}
+.purchase-tier .purchase-features {
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+}
+.purchase-tier .purchase-features li {
+  font-size: var(--fs-content);
+  color: #666;
+  padding: 3px 0;
+}
+.purchase-tier .purchase-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: var(--product-gold, #D4B98C);
+  color: #fff;
+  font-size: var(--fs-title);
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.purchase-tier .purchase-btn:hover {
+  opacity: 0.85;
+}
+
 /* ── 幼儿动态与安全提示 ────────────────────────────────────── */
 .study-safety {
   display: flex;
