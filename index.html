@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="沪上呼呼·幼儿非遗启蒙 - 幼儿非遗启蒙离线小程序">
+  <title>沪上呼呼·幼儿非遗启蒙</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Bottom Fixed Navigation Bar -->
+  <nav class="tab-bar" id="tabBar">
+    <a class="tab-item active" data-tab="home" href="#home">
+      <span class="tab-icon">🏠</span>
+      <span class="tab-label">首页</span>
+    </a>
+    <a class="tab-item" data-tab="craft" href="#craft">
+      <span class="tab-icon">🔧</span>
+      <span class="tab-label">工艺学习</span>
+    </a>
+    <a class="tab-item" data-tab="reading" href="#reading">
+      <span class="tab-icon">📖</span>
+      <span class="tab-label">音频伴读</span>
+    </a>
+    <a class="tab-item" data-tab="study" href="#study">
+      <span class="tab-icon">🎒</span>
+      <span class="tab-label">文旅研学</span>
+    </a>
+    <a class="tab-item" data-tab="profile" href="#profile">
+      <span class="tab-icon">👤</span>
+      <span class="tab-label">我的</span>
+    </a>
+  </nav>
+
+  <!-- Lib files -->
+  <script type="module" src="lib/model-viewer.min.js"></script>
+  <script src="lib/jsQR.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/scanner.js"></script>
+</body>
+</html>
